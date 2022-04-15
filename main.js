@@ -22,3 +22,8 @@ var u = undefined;
 //null and undefined are sub-types of all other types
 var isNew = null;
 var myName = undefined;
+// array different syntax, same effect
+var list1 = [1, 2, 3];
+var list2 = [1, 2, 3];
+//mixed type tuple, fixed array length, and type order
+var person1 = ['zeke', 99];

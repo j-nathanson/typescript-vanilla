@@ -29,3 +29,10 @@ let u: undefined = undefined;
 
 let isNew: boolean = null;
 let myName: string = undefined;
+
+// array different syntax, same effect
+let list1: number[] = [1, 2, 3];
+let list2: Array<number> = [1, 2, 3]
+
+//mixed type tuple, fixed array length, and type order
+let person1: [string, number] = ['zeke', 99]
