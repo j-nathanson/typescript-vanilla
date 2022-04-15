@@ -39,7 +39,7 @@ var Color;
 ;
 var c = Color.Green;
 console.log(c);
-// any, can ressassign to any type
+// any, can reassign to any type
 var randomVal = 10;
 randomVal = true;
 randomVal = 'bob';
@@ -48,3 +48,19 @@ var myVal = 10;
 console.log(myVal.name);
 myVal();
 myVal.toUpperCase();
+var myVal2 = 10;
+// These will throw compile error
+// console.log(myVal2.name)
+// myVal2()
+// myVal2.toUpperCase()
+// returns obj is { name: string }  , object with prop 'name' type string
+function hasName(obj) {
+    return !!obj &&
+        typeof obj === 'object' &&
+        "name" in obj;
+}
+// type assertion treat variable as the type
+if (hasName(myVal2)) {
+    console.log(myVal2.name);
+}
+myVal2.toUpperCase();

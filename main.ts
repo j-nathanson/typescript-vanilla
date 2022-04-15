@@ -45,7 +45,7 @@ enum Color { Red = 5, Green, Blue };
 let c: Color = Color.Green
 console.log(c)
 
-// any, can ressassign to any type
+// any, can reassign to any type
 let randomVal: any = 10;
 randomVal = true;
 randomVal = 'bob';
@@ -55,3 +55,24 @@ let myVal: any = 10;
 console.log(myVal.name)
 myVal()
 myVal.toUpperCase()
+
+let myVal2: unknown = 10;
+// These will throw compile error
+// console.log(myVal2.name)
+// myVal2()
+// myVal2.toUpperCase()
+
+// returns obj is { name: string }  , object with prop 'name' type string
+function hasName(obj: any): obj is { name: string } {
+    return !!obj &&
+        typeof obj === 'object' &&
+        "name" in obj
+}
+
+// type assertion treat variable as the type
+if(hasName(myVal2)){
+    console.log(myVal2.name);
+    
+}
+
+    (myVal2 as string).toUpperCase()
