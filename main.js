@@ -127,6 +127,9 @@ var p = {
     lastName: 'McCune'
 };
 fullName2(p);
+// public property can be used inside/outside of a class
+// private only inside the base class, does not extend to other classes
+// protected can be extended within extend classes, but not outside scope
 var Employee = /** @class */ (function () {
     function Employee(name) {
         this.employeeName = name;
@@ -146,10 +149,11 @@ var Manager = /** @class */ (function (_super) {
     }
     Manager.prototype.delegateWork = function () {
         console.log("Manager delegating tasks");
+        console.log(m1.employeeName);
     };
     return Manager;
 }(Employee));
 var m1 = new Manager('luke');
 m1.delegateWork();
 m1.greet();
-
+console.log(m1.employeeName);

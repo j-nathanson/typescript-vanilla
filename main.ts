@@ -144,8 +144,11 @@ let p = {
 
 fullName2(p)
 
+// public property can be used inside/outside of a class
+// private only inside the base class, does not extend to other classes
+// protected can be extended within extend classes, but not outside scope
 class Employee {
-    employeeName: string;
+    public employeeName: string;
 
     constructor(name: string) {
         this.employeeName = name;
@@ -167,6 +170,7 @@ class Manager extends Employee {
     }
     delegateWork() {
         console.log(`Manager delegating tasks`);
+        console.log(m1.employeeName);
 
     }
 }
@@ -174,3 +178,5 @@ class Manager extends Employee {
 let m1 = new Manager('luke')
 m1.delegateWork()
 m1.greet()
+console.log(m1.employeeName);
+
