@@ -10,3 +10,22 @@ const y = 20;
 
 let sum;
 const title = 'Bobproject';
+
+// basic
+// '.' for type intellisense 
+let isBeginner: boolean = true;
+let total: number = 0;
+let name: string = 'doug';
+
+let sentence: string = `My name is ${name} I am new to typescript`;
+
+console.log(sentence)
+
+// not much use on their own
+let n: null = null;
+let u: undefined = undefined;
+
+//null and undefined are sub-types of all other types
+
+let isNew: boolean = null;
+let myName: string = undefined;
