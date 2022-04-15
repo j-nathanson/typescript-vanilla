@@ -100,4 +100,15 @@ function add4(num1, num2) {
 }
 console.log(add4(5, 10));
 console.log(add4(5));
-// add('5',10)  static
+// okay for obj with small amount of properties
+function fullName1(person) {
+    console.log("".concat(person.firstName, " ").concat(person.lastName));
+}
+function fullName2(person) {
+    console.log("".concat(person.firstName, " ").concat(person.lastName));
+}
+var p = {
+    firstName: 'Don',
+    lastName: 'McCune'
+};
+fullName2(p);

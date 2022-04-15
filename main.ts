@@ -121,5 +121,25 @@ function add4(num1: number, num2: number = 10): number {
 console.log(add4(5, 10))
 console.log(add4(5))
 
+// okay for obj with small amount of properties
+function fullName1(person: { firstName: string, lastName: string }) {
+    console.log(`${person.firstName} ${person.lastName}`);
+}
 
-// add('5',10)  static
+// pre define object with property names and types
+// optional properties '?' are good in form use-cases when a user inputs non required data
+interface Person {
+    firstName: string,
+    lastName: string
+}
+
+function fullName2(person: Person) {
+    console.log(`${person.firstName} ${person.lastName}`);
+}
+
+let p = {
+    firstName: 'Don',
+    lastName: 'McCune',
+}
+
+fullName2(p)
