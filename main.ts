@@ -36,3 +36,22 @@ let list2: Array<number> = [1, 2, 3]
 
 //mixed type tuple, fixed array length, and type order
 let person1: [string, number] = ['zeke', 99]
+
+// enum
+//friendly name to set of numeric values
+// default index at 0
+enum Color { Red = 5, Green, Blue };
+
+let c: Color = Color.Green
+console.log(c)
+
+// any, can ressassign to any type
+let randomVal: any = 10;
+randomVal = true;
+randomVal = 'bob';
+
+// wont catch any errors because it could be any type
+let myVal: any = 10;
+console.log(myVal.name)
+myVal()
+myVal.toUpperCase()
