@@ -52,9 +52,9 @@ randomVal = 'bob';
 
 // wont catch any errors because it could be any type
 let myVal: any = 10;
-console.log(myVal.name)
-myVal()
-myVal.toUpperCase()
+// console.log(myVal.name)
+// myVal()
+// myVal.toUpperCase()
 
 let myVal2: unknown = 10;
 // These will throw compile error
@@ -75,7 +75,7 @@ if (hasName(myVal2)) {
 
 }
 
-(myVal2 as string).toUpperCase()
+// (myVal2 as string).toUpperCase()
 
 //type inference
 let a; // implicit type any
@@ -87,4 +87,39 @@ let b = 20; // implicit type number cannot do b = true
 //multiple type union type only these two
 let multiType: number | boolean;
 multiType = 90;
-multiType = true
+multiType = true;
+
+let anyType: any;
+anyType = 20;
+
+// function
+function add1(num1: number, num2: number) {
+    return num1 + num2
+}
+
+// after params can state what will be returned or else it will be inferred
+function add2(num1: number, num2: number): number {
+    return num1 + num2
+}
+
+// optional parameters after required parameters
+function add3(num1: number, num2?: number): number {
+    if (num2) {
+        return num1 + num2
+    }
+    return num1
+}
+
+// default value
+function add4(num1: number, num2: number = 10): number {
+    if (num2) {
+        return num1 + num2
+    }
+    return num1
+}
+
+console.log(add4(5, 10))
+console.log(add4(5))
+
+
+// add('5',10)  static

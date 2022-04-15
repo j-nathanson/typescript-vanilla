@@ -45,9 +45,9 @@ randomVal = true;
 randomVal = 'bob';
 // wont catch any errors because it could be any type
 var myVal = 10;
-console.log(myVal.name);
-myVal();
-myVal.toUpperCase();
+// console.log(myVal.name)
+// myVal()
+// myVal.toUpperCase()
 var myVal2 = 10;
 // These will throw compile error
 // console.log(myVal2.name)
@@ -63,7 +63,7 @@ function hasName(obj) {
 if (hasName(myVal2)) {
     console.log(myVal2.name);
 }
-myVal2.toUpperCase();
+// (myVal2 as string).toUpperCase()
 //type inference
 var a; // implicit type any
 a = 10;
@@ -73,3 +73,31 @@ var b = 20; // implicit type number cannot do b = true
 var multiType;
 multiType = 90;
 multiType = true;
+var anyType;
+anyType = 20;
+// function
+function add1(num1, num2) {
+    return num1 + num2;
+}
+// after params can state what will be returned or else it will be inferred
+function add2(num1, num2) {
+    return num1 + num2;
+}
+// optional parameters after required parameters
+function add3(num1, num2) {
+    if (num2) {
+        return num1 + num2;
+    }
+    return num1;
+}
+// default value
+function add4(num1, num2) {
+    if (num2 === void 0) { num2 = 10; }
+    if (num2) {
+        return num1 + num2;
+    }
+    return num1;
+}
+console.log(add4(5, 10));
+console.log(add4(5));
+// add('5',10)  static
