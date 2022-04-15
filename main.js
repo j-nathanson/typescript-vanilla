@@ -64,3 +64,12 @@ if (hasName(myVal2)) {
     console.log(myVal2.name);
 }
 myVal2.toUpperCase();
+//type inference
+var a; // implicit type any
+a = 10;
+a = true;
+var b = 20; // implicit type number cannot do b = true
+//multiple type union type only these two
+var multiType;
+multiType = 90;
+multiType = true;

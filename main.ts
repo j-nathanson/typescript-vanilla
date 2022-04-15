@@ -70,9 +70,21 @@ function hasName(obj: any): obj is { name: string } {
 }
 
 // type assertion treat variable as the type
-if(hasName(myVal2)){
+if (hasName(myVal2)) {
     console.log(myVal2.name);
-    
+
 }
 
-    (myVal2 as string).toUpperCase()
+(myVal2 as string).toUpperCase()
+
+//type inference
+let a; // implicit type any
+a = 10;
+a = true;
+
+let b = 20; // implicit type number cannot do b = true
+
+//multiple type union type only these two
+let multiType: number | boolean;
+multiType = 90;
+multiType = true
